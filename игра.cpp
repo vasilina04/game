@@ -490,11 +490,9 @@ int main() {
         moveEnemyRanged(enemyRanged, player, gameMap, 3);
         moveEnemyTank(enemyTank, player, gameMap, moveCounter, 4);
         moveCounter++;
-      
-        // Проверка условий победы/поражения и отрисовка карты
         if (gameMap[player.y][player.x].type == SWORD && !player.hasSword) {
-            player.equipSword(); // Игрок подбирает меч
-            gameMap[player.y][player.x].type = GRASS; // Меняем меч на траву (или пустую клетку)
+            player.equipSword();
+            gameMap[player.y][player.x].type = GRASS; 
         }
         if (!player.isAlive()) {
             cout << "Game Over! You have been defeated." << endl;
